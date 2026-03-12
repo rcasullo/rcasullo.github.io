@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — PhD Researcher</title>
+    <title>Riccardo Casullo — PhD in Economics</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -133,12 +133,6 @@
             display: block; filter: grayscale(15%) contrast(1.02); transition: filter 0.5s ease;
         }
         .photo-frame:hover img { filter: grayscale(0%) contrast(1); }
-        .photo-placeholder {
-            width: 100%; height: 100%; border-radius: 12px; background: var(--cream);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            color: var(--muted); font-size: 0.85rem; gap: 0.8rem; border: 2px dashed var(--light-line);
-        }
-        .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
 
         .section-wrap { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
         section { padding: 6rem 0; }
@@ -147,6 +141,7 @@
         h2 { font-family: 'DM Serif Display', serif; font-size: 2.4rem; font-weight: 400; margin-bottom: 0.6rem; }
         .section-subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 3rem; }
 
+        /* --- RESEARCH --- */
         .research-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
         .research-card {
             background: white; border-radius: 12px; padding: 2rem;
@@ -167,31 +162,47 @@
         }
         .research-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.6rem; line-height: 1.3; }
         .research-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.75; }
+        .draft-badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            margin-top: 1rem; font-size: 0.78rem; color: var(--muted);
+            font-weight: 500; font-style: italic;
+        }
 
-        .pub-timeline { position: relative; padding-left: 3rem; }
-        .pub-timeline::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-            width: 1.5px; background: var(--light-line);
+        /* --- PUBLICATIONS --- */
+        .pub-empty {
+            text-align: center;
+            padding: 4rem 2rem;
         }
-        .pub-item { position: relative; padding: 1.5rem 0 2.5rem 0; }
-        .pub-item::before {
-            content: ''; position: absolute; left: -3rem; top: 1.8rem;
-            width: 10px; height: 10px; border-radius: 50%; background: var(--paper);
-            border: 2px solid var(--accent); transform: translateX(-50%); margin-left: 0.75px;
-            transition: background 0.3s;
+        .pub-empty-emoji {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
-        .pub-item:hover::before { background: var(--accent); }
-        .pub-year { font-size: 0.75rem; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
-        .pub-title { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; margin-bottom: 0.4rem; line-height: 1.4; transition: color 0.3s; }
-        .pub-item:hover .pub-title { color: var(--accent); }
-        .pub-authors { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.15rem; }
-        .pub-venue { font-size: 0.83rem; font-style: italic; color: var(--muted); }
-        .pub-link {
-            display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.6rem;
-            font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 500; transition: gap 0.3s;
+        .pub-empty h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
         }
-        .pub-link:hover { gap: 0.5rem; }
+        .pub-empty p {
+            color: var(--muted);
+            font-size: 1rem;
+            max-width: 450px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .pub-empty .typewriter {
+            display: inline-block;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-top: 1.2rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-soft);
+            border-radius: 8px;
+        }
 
+        /* --- PROJECTS --- */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         .project-grid > *:nth-child(even) { margin-top: 2.5rem; }
         .project-card {
@@ -214,10 +225,11 @@
             border-radius: 100px; font-weight: 500;
         }
 
+        /* --- CONTACT --- */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
         .contact-grid p { color: var(--muted); font-size: 1rem; line-height: 1.85; }
         .contact-email {
-            font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--ink);
+            font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--ink);
             text-decoration: none; font-weight: 400; display: inline-block; margin-top: 1.5rem;
             transition: color 0.3s; word-break: break-all;
         }
@@ -267,7 +279,7 @@
 
 <nav id="navbar">
     <div class="nav-inner">
-        <a href="#about" class="logo">YN.</a>
+        <a href="#about" class="logo">Riccardo Casullo</a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#about" onclick="closeMenu()">About</a></li>
             <li><a href="#research" onclick="closeMenu()">Research</a></li>
@@ -285,40 +297,58 @@
     <div class="hero">
         <div class="hero-text reveal">
             <div class="hero-label">PhD Researcher</div>
-            <h1>Your <em>Name</em></h1>
+            <h1>Riccardo <em>Casullo</em></h1>
             <p class="hero-desc">
-                PhD student in <strong>[Your Field]</strong> at <strong>[Your University]</strong>.
-                My research focuses on [brief description of your research interests].
-                I am advised by <a href="#">Prof. [Advisor Name]</a>.
+                I am a PhD student in <strong>Economics</strong> at <strong>Sapienza University of Rome</strong>, working under the supervision of <a href="https://micheleraitano.site.uniroma1.it/" target="_blank">Prof. Michele Raitano</a>. I am an applied economist — or at least I aspire to be one — studying how labour market inequalities persist across generations, with a focus on intergenerational mobility.
             </p>
             <p class="hero-desc" style="margin-top: 1rem;">
-                Previously, I obtained my [degree] from [University] in [year].
+                From April 2026, I will be a visiting researcher at the Research Group "Inequality and Public Policy" at <strong>ZEW Mannheim</strong>.
             </p>
             <div class="academic-links">
-                <a href="#" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    Scholar
-                </a>
-                <a href="#" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 10h8"/></svg>
-                    ORCID
-                </a>
-                <a href="#" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    GitHub
-                </a>
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/riccardo-casullo/" target="_blank">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     LinkedIn
+                </a>
+                <a href="https://github.com/rcasullo" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub
                 </a>
             </div>
         </div>
         <div class="hero-photo reveal" style="transition-delay: 0.2s;">
             <div class="photo-frame">
-                <!-- Replace with: <img src="your-photo.jpg" alt="Your Name"> -->
-                <div class="photo-placeholder">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Your photo here
+                <img src="foto.jpg" alt="Riccardo Casullo">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- RESEARCH / WORKING PAPERS -->
+<section id="research">
+    <div class="section-wrap">
+        <div class="reveal">
+            <h2>Working Papers</h2>
+            <p class="section-subtitle">Current research projects.</p>
+        </div>
+        <div class="research-grid stagger">
+            <div class="research-card">
+                <span class="research-tag">Work in Progress</span>
+                <h3>An Open Wound: Measuring Scarring Effects in Italy</h3>
+                <p>with <a href="https://micheleraitano.site.uniroma1.it/" target="_blank" style="color: var(--accent); text-decoration: none;">Michele Raitano</a></p>
+                <div class="draft-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    Abstract &amp; draft coming soon
+                </div>
+            </div>
+            <div class="research-card">
+                <span class="research-tag">Work in Progress</span>
+                <h3>Male Mortality and Female Poverty</h3>
+                <p>with <strong>Stefano Filauro</strong> &amp; <strong>Micha&#322; Gulczy&#324;ski</strong></p>
+                <div class="draft-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    Abstract &amp; draft coming soon
                 </div>
             </div>
         </div>
@@ -327,98 +357,44 @@
 
 <div class="section-divider"><hr></div>
 
-<section id="research">
-    <div class="section-wrap">
-        <div class="reveal">
-            <h2>Research</h2>
-            <p class="section-subtitle">Areas I'm currently exploring and past work.</p>
-        </div>
-        <div class="research-grid stagger">
-            <div class="research-card">
-                <span class="research-tag">Current Focus</span>
-                <h3>Research Topic One</h3>
-                <p>Brief description of your main research area. Explain what questions you're investigating and why this work matters.</p>
-            </div>
-            <div class="research-card">
-                <span class="research-tag">Ongoing</span>
-                <h3>Research Topic Two</h3>
-                <p>Description of another research thread. You might mention collaborations, datasets, or specific problems.</p>
-            </div>
-            <div class="research-card">
-                <span class="research-tag">Past Work</span>
-                <h3>Research Topic Three</h3>
-                <p>A previous project or master's thesis that led to your current PhD research.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider"><hr></div>
-
+<!-- PUBLICATIONS -->
 <section id="publications">
     <div class="section-wrap">
         <div class="reveal">
             <h2>Publications</h2>
-            <p class="section-subtitle">Selected papers and preprints.</p>
+            <p class="section-subtitle">Peer-reviewed papers.</p>
         </div>
-        <div class="pub-timeline stagger">
-            <div class="pub-item">
-                <div class="pub-year">2025</div>
-                <div class="pub-title">Title of Your Most Recent Paper</div>
-                <div class="pub-authors"><strong>Your Name</strong>, Co-Author A, Co-Author B</div>
-                <div class="pub-venue">Conference or Journal Name, 2025</div>
-                <a href="#" class="pub-link">Read paper →</a>
-            </div>
-            <div class="pub-item">
-                <div class="pub-year">2024</div>
-                <div class="pub-title">Title of Another Paper You Published</div>
-                <div class="pub-authors">Co-Author A, <strong>Your Name</strong>, Co-Author C</div>
-                <div class="pub-venue">Workshop or Conference Name, 2024</div>
-                <a href="#" class="pub-link">Read paper →</a>
-            </div>
-            <div class="pub-item">
-                <div class="pub-year">2023</div>
-                <div class="pub-title">An Earlier Publication or Preprint</div>
-                <div class="pub-authors"><strong>Your Name</strong>, Co-Author D</div>
-                <div class="pub-venue">ArXiv Preprint, 2023</div>
-                <a href="#" class="pub-link">Read paper →</a>
-            </div>
+        <div class="pub-empty reveal">
+            <span class="pub-empty-emoji">&#128221;</span>
+            <h3>Stay tuned!</h3>
+            <p>Papers are brewing. In the meantime, I'm fueled by espresso and econometrics. Check back soon — or just keep refreshing, I won't judge.</p>
+            <span class="typewriter">$ submit_paper --fingers-crossed</span>
         </div>
     </div>
 </section>
 
 <div class="section-divider"><hr></div>
 
+<!-- PROJECTS -->
 <section id="projects">
     <div class="section-wrap">
         <div class="reveal">
             <h2>Projects</h2>
-            <p class="section-subtitle">Tools, code, and things I've built.</p>
+            <p class="section-subtitle">Teaching and other activities.</p>
         </div>
         <div class="project-grid stagger">
             <div class="project-card">
                 <div class="project-num">01</div>
-                <h3>Project Name</h3>
-                <p>Short description of a research tool, software library, or side project you've built.</p>
-                <div class="project-tech"><span>Python</span><span>PyTorch</span></div>
-            </div>
-            <div class="project-card">
-                <div class="project-num">02</div>
-                <h3>Another Project</h3>
-                <p>Description of another project — could be a dataset, a web app, or a visualization.</p>
-                <div class="project-tech"><span>JavaScript</span><span>D3.js</span></div>
-            </div>
-            <div class="project-card">
-                <div class="project-num">03</div>
-                <h3>Teaching Material</h3>
-                <p>Tutorials, course material, or educational content you've developed.</p>
-                <div class="project-tech"><span>LaTeX</span><span>Jupyter</span></div>
-            </div>
-            <div class="project-card">
-                <div class="project-num">04</div>
-                <h3>Open Source</h3>
-                <p>An open-source project you contributed to or maintain.</p>
-                <div class="project-tech"><span>Rust</span><span>WASM</span></div>
+                <h3>Teaching Assistant — Politica Economica</h3>
+                <p>Teaching assistant for the course held by <strong>Prof. Massimiliano Tancioni</strong> at Sapienza University of Rome. I prepare and lead exercise sessions for students.</p>
+                <div style="display: flex; gap: 0.5rem; margin-top: 1.2rem; flex-wrap: wrap;">
+                    <a href="esercitazione1.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 1 ↓</a>
+                    <a href="esercitazione2.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 2 ↓</a>
+                    <a href="esercitazione3.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 3 ↓</a>
+                    <a href="esercitazione4.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 4 ↓</a>
+                    <a href="esercitazione5.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 5 ↓</a>
+                </div>
+                <div class="project-tech"><span>Sapienza</span><span>A.Y. 2024/25</span></div>
             </div>
         </div>
     </div>
@@ -426,26 +402,27 @@
 
 <div class="section-divider"><hr></div>
 
+<!-- CONTACT -->
 <section id="contact">
     <div class="section-wrap">
         <div class="contact-grid">
             <div class="reveal">
                 <h2>Get in touch</h2>
-                <p>I'm always happy to discuss research ideas, potential collaborations, or just chat about [your field]. Feel free to reach out.</p>
-                <a href="mailto:your.email@university.edu" class="contact-email">your.email@<br>university.edu</a>
+                <p>I'm always happy to discuss research ideas, potential collaborations, or just chat about economics — or football. Feel free to reach out.</p>
+                <a href="mailto:riccardo.casullo@uniroma1.it" class="contact-email">riccardo.casullo@<br>uniroma1.it</a>
             </div>
             <div class="contact-actions reveal" style="transition-delay: 0.15s;">
                 <a href="#" class="cv-button" download>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Download CV
                 </a>
-                <p class="contact-hint">PDF · Updated March 2026</p>
+                <p class="contact-hint">PDF &middot; Coming soon</p>
             </div>
         </div>
     </div>
 </section>
 
-<footer>&copy; 2026 Your Name &middot; Built with care</footer>
+<footer>&copy; 2026 Riccardo Casullo &middot; Built with care</footer>
 
 <script>
     window.addEventListener('scroll', () => {

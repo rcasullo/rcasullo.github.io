@@ -54,6 +54,11 @@
         .stagger.visible > *:nth-child(6) { transition-delay: 0.40s; }
         .stagger.visible > * { opacity: 1; transform: translateY(0); }
 
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal, .stagger > * { opacity: 1; transform: none; transition: none; }
+        }
+
         nav {
             position: fixed; top: 0; width: 100%; z-index: 100;
             background: rgba(245, 243, 239, 0);
@@ -75,7 +80,7 @@
             color: var(--ink); text-decoration: none; transition: opacity 0.3s;
         }
         nav .logo:hover { opacity: 0.6; }
-        nav .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+        nav .nav-links { display: flex; gap: 1.8rem; list-style: none; }
         nav .nav-links a {
             text-decoration: none; color: var(--muted); font-size: 0.82rem;
             font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s;
@@ -203,7 +208,34 @@
             border-radius: 8px;
         }
 
-        /* --- PROJECTS --- */
+        /* --- CONFERENCES --- */
+        .conf-list { border-top: 1px solid var(--light-line); }
+        .conf-item {
+            display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem;
+            padding: 1.5rem 0.5rem; border-bottom: 1px solid var(--light-line);
+            transition: background 0.3s ease, padding-left 0.3s ease;
+        }
+        .conf-item:hover { background: var(--accent-soft); padding-left: 1rem; }
+        .conf-date {
+            font-family: 'DM Serif Display', serif; font-size: 1.05rem;
+            color: var(--accent); line-height: 1.5;
+        }
+        .conf-body h3 {
+            font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 500;
+            margin-bottom: 0.2rem; line-height: 1.5;
+        }
+        .conf-tag {
+            display: inline-block; font-size: 0.65rem; text-transform: uppercase;
+            letter-spacing: 0.1em; color: var(--accent); font-weight: 600;
+            background: var(--accent-soft); padding: 0.15rem 0.6rem;
+            border-radius: 100px; margin-left: 0.5rem; vertical-align: 2px;
+        }
+        .conf-item:hover .conf-tag { background: white; }
+        .conf-place { font-size: 0.88rem; color: var(--muted); }
+        .conf-paper { font-size: 0.85rem; color: var(--muted); font-style: italic; margin-top: 0.3rem; }
+        .conf-note { font-size: 0.85rem; color: var(--muted); margin-top: 1.5rem; }
+
+        /* --- TEACHING --- */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         .project-grid > *:nth-child(even) { margin-top: 2.5rem; }
         .project-card {
@@ -262,6 +294,7 @@
             .research-grid { grid-template-columns: 1fr; }
             .project-grid { grid-template-columns: 1fr; }
             .project-grid > *:nth-child(even) { margin-top: 0; }
+            .conf-item { grid-template-columns: 1fr; gap: 0.3rem; }
             .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
             .section-wrap, .section-divider, nav .nav-inner { padding: 0 1.5rem; }
             .hero { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -285,7 +318,8 @@
             <li><a href="#about" onclick="closeMenu()">About</a></li>
             <li><a href="#research" onclick="closeMenu()">Research</a></li>
             <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
-            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#conferences" onclick="closeMenu()">Conferences</a></li>
+            <li><a href="#teaching" onclick="closeMenu()">Teaching</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
         </ul>
         <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -303,7 +337,7 @@
                 I am a PhD student in <strong>Economics</strong> at <strong>Sapienza University of Rome</strong>, working under the supervision of <a href="https://micheleraitano.site.uniroma1.it/" target="_blank">Prof. Michele Raitano</a>. I am an applied economist — or at least I aspire to be one — studying how labour market inequalities persist across generations, with a focus on intergenerational mobility.
             </p>
             <p class="hero-desc" style="margin-top: 1rem;">
-                From April 2026, I will be a visiting researcher at the Research Group "Inequality and Public Policy" at <strong>ZEW Mannheim</strong>.
+                From September 2026 I will be a visiting PhD student at <strong>Universidad Carlos III de Madrid</strong>, hosted by <strong>Prof. Jan Stuhler</strong>. From April to July 2026 I was a visiting researcher in the "Inequality and Public Policy" unit at <strong>ZEW Mannheim</strong>.
             </p>
             <div class="academic-links">
                 <a href="https://www.linkedin.com/in/riccardo-casullo/" target="_blank">
@@ -352,6 +386,15 @@
                     Abstract &amp; draft coming soon
                 </div>
             </div>
+            <div class="research-card">
+                <span class="research-tag">Early Stage</span>
+                <h3>Inherited Positions: Occupational Closure as a Channel of Intergenerational Persistence</h3>
+                <p>with <strong>Guido Neidh&ouml;fer</strong> &amp; <a href="https://micheleraitano.site.uniroma1.it/" target="_blank" style="color: var(--accent); text-decoration: none;">Michele Raitano</a></p>
+                <div class="draft-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    Abstract &amp; draft coming soon
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -376,12 +419,82 @@
 
 <div class="section-divider"><hr></div>
 
-<!-- PROJECTS -->
-<section id="projects">
+<!-- CONFERENCES -->
+<section id="conferences">
     <div class="section-wrap">
         <div class="reveal">
-            <h2>Projects</h2>
-            <p class="section-subtitle">Teaching and other activities.</p>
+            <h2>Conferences &amp; Seminars</h2>
+            <p class="section-subtitle">Presentations and academic visits.</p>
+        </div>
+        <div class="conf-list reveal">
+
+            <div class="conf-item">
+                <div class="conf-date">Oct 2026</div>
+                <div class="conf-body">
+                    <h3>Early Career &amp; PhD Workshop on Socioeconomic Mobility and Public Policies <span class="conf-tag">Upcoming</span></h3>
+                    <p class="conf-place">Alcal&aacute; de Henares, Spain &middot; 22–23 October</p>
+                    <p class="conf-paper">"An Open Wound: Measuring Scarring Effects in Italy"</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">Sep 2026</div>
+                <div class="conf-body">
+                    <h3>XIX ESPAnet Italia Conference <span class="conf-tag">Upcoming</span></h3>
+                    <p class="conf-place">Rome, Italy &middot; 9–11 September</p>
+                    <p class="conf-paper">"An Open Wound: Measuring Scarring Effects in Italy"</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">Jun 2026</div>
+                <div class="conf-body">
+                    <h3>Inequalities and Opportunities Conference</h3>
+                    <p class="conf-place">Bari, Italy &middot; 25–26 June</p>
+                    <p class="conf-paper">Paper: "An Open Wound: Measuring Scarring Effects in Italy"</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">2026</div>
+                <div class="conf-body">
+                    <h3>Internal Seminar, ZEW Mannheim</h3>
+                    <p class="conf-place">Unit "Inequality and Public Policy", Germany</p>
+                    <p class="conf-paper">"An Open Wound: Measuring Scarring Effects in Italy"</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">Jan 2026</div>
+                <div class="conf-body">
+                    <h3>Winter School IT19</h3>
+                    <p class="conf-place">Alba di Canazei, Italy &middot; 6–10 January</p>
+                    <p class="conf-paper">Poster: "An Open Wound: Measuring Scarring Effects in Italy"</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">May 2025</div>
+                <div class="conf-body">
+                    <h3>InRome Summer Meeting</h3>
+                    <p class="conf-place">Roma Tre University, Ostia, Italy &middot; 15–16 May</p>
+                    <p class="conf-paper">Paper: "An Open Wound: Measuring Scarring Effects in Italy"</p>
+                </div>
+            </div>
+
+        </div>
+        <p class="conf-note reveal">"Male Mortality and Female Poverty" has also been presented by a co-author.</p>
+    </div>
+</section>
+
+<div class="section-divider"><hr></div>
+
+<!-- TEACHING -->
+<section id="teaching">
+    <div class="section-wrap">
+        <div class="reveal">
+            <h2>Teaching</h2>
+            <p class="section-subtitle">Courses and materials.</p>
         </div>
         <div class="project-grid stagger">
             <div class="project-card">
@@ -428,6 +541,11 @@
     </div>
     <div class="project-tech" style="margin-top: 1.2rem;"><span>Sapienza</span><span>A.Y. 2024/25</span></div>
 </div>
+        </div>
+    </div>
+</section>
+
+<!-- HIDDEN FOR NOW: Etica & Economia article. Restore by moving this card back into the grid above.
             <div class="project-card">
                 <div class="project-num">03</div>
                 <h3>Il modello scandinavo: tra idealizzazione e realtà</h3>
@@ -435,9 +553,7 @@
                 <a href="https://eticaeconomia.it/il-modello-scandinavo-tra-idealizzazione-e-realta/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.8rem; font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 500; transition: gap 0.3s;">Read article →</a>
                 <div class="project-tech"><span>Italian</span><span>Etica &amp; Economia</span></div>
             </div>
-        </div>
-    </div>
-</section>
+-->
 
 <div class="section-divider"><hr></div>
 

@@ -307,6 +307,24 @@
             nav .nav-links.open { display: flex; }
             .hamburger { display: flex; }
         }
+
+        /* --- ABSTRACTS & FIGURES --- */
+        .research-grid { align-items: start; }
+        .research-figure {
+            margin: 0 -0.5rem 1.2rem; padding: 0.8rem 0.5rem;
+            background: var(--paper); border-radius: 8px;
+        }
+        .research-figure svg { display: block; width: 100%; height: auto; }
+        .abstract { margin-top: 1rem; }
+        .abstract summary {
+            cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 0.4rem;
+            font-size: 0.78rem; font-weight: 500; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.08em;
+        }
+        .abstract summary::-webkit-details-marker { display: none; }
+        .abstract summary::after { content: '+'; font-size: 1rem; line-height: 1; transition: transform 0.3s; }
+        .abstract[open] summary::after { transform: rotate(45deg); }
+        .abstract p { margin-top: 0.8rem; font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
     </style>
 </head>
 <body>
@@ -369,21 +387,51 @@
         </div>
         <div class="research-grid stagger">
             <div class="research-card">
+                <div class="research-figure">
+                    <svg viewBox="0 0 260 214" role="img" aria-label="Research design: entrants with the same education and region of birth who finish their studies in a slack or a normal year are followed for fourteen years, and compared by parental education and region.">
+                        <g font-family="Outfit, sans-serif" font-size="12.5" fill="#111111" text-anchor="middle">
+                            <rect x="2" y="4" width="122" height="40" rx="6" fill="#ffffff" stroke="#c45d3e" stroke-width="1.3"/>
+                            <text x="63" y="20">Entry in a</text>
+                            <text x="63" y="36" font-weight="500" fill="#c45d3e">slack year</text>
+                            <rect x="136" y="4" width="122" height="40" rx="6" fill="#ffffff" stroke="#ddd9d2" stroke-width="1.3"/>
+                            <text x="197" y="20">Entry in a</text>
+                            <text x="197" y="36" font-weight="500" fill="#777572">normal year</text>
+                            <text x="130" y="64" font-size="11" fill="#777572">same education, same region of birth</text>
+                            <line x1="130" y1="72" x2="130" y2="86" stroke="#777572" stroke-width="1.3"/>
+                            <path d="M126 85 L130 92 L134 85 Z" fill="#777572"/>
+                            <rect x="2" y="96" width="256" height="50" rx="6" fill="#ffffff" stroke="#ddd9d2" stroke-width="1.3"/>
+                            <text x="130" y="116" font-weight="500">Careers followed for 14 years</text>
+                            <text x="130" y="134" font-size="11" fill="#777572">earnings = weeks worked &#215; weekly wage</text>
+                            <line x1="130" y1="150" x2="130" y2="164" stroke="#777572" stroke-width="1.3"/>
+                            <path d="M126 163 L130 170 L134 163 Z" fill="#777572"/>
+                            <rect x="2" y="174" width="256" height="36" rx="6" fill="rgba(196,93,62,0.08)" stroke="#c45d3e" stroke-width="1.3"/>
+                            <text x="130" y="197" font-weight="500">Compared by parental education and region</text>
+                        </g>
+                    </svg>
+                </div>
                 <span class="research-tag">Work in Progress</span>
                 <h3>An Open Wound: Measuring Scarring Effects in Italy</h3>
                 <p>with <a href="https://micheleraitano.site.uniroma1.it/" target="_blank" style="color: var(--accent); text-decoration: none;">Michele Raitano</a></p>
+                <details class="abstract">
+                    <summary>Abstract</summary>
+                    <p>We ask whether the cost of entering the labor market in a slack year is shared across entrants or concentrated by family origin. We use AD-SILC, which links the Italian survey on income and living conditions to the social security records of the same individuals, and follow Italians who completed their education between 1977 and 2003 over the first fourteen years of their careers. We compare entrants with the same education, born in the same region, who completed their studies in years with different regional unemployment. We trace how entry conditions affect annual earnings and decompose the effect into weeks worked and the weekly wage, following it over time. We then ask whether the effect differs by parental education, within each level of the entrant's own education, and whether it plays out differently across Italian regions.</p>
+                </details>
                 <div class="draft-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    Abstract &amp; draft coming soon
+                    Draft coming soon
                 </div>
             </div>
             <div class="research-card">
                 <span class="research-tag">Work in Progress</span>
                 <h3>Male Mortality and Female Poverty</h3>
                 <p>with <strong>Stefano Filauro</strong> &amp; <strong>Micha&#322; Gulczy&#324;ski</strong></p>
+                <details class="abstract">
+                    <summary>Abstract</summary>
+                    <p>In almost every European country, women aged 65 and over face a higher risk of poverty than men of the same age. Part of this gap reflects demography: men die earlier, so older women are more often widowed and living alone. Using EU-SILC data for the EU countries and Norway, we build counterfactual scenarios that reweight the population of older women and men to separate the role of demographic structure and widowhood from other drivers of the gap.</p>
+                </details>
                 <div class="draft-badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    Abstract &amp; draft coming soon
+                    Draft coming soon
                 </div>
             </div>
             <div class="research-card">
@@ -424,7 +472,7 @@
     <div class="section-wrap">
         <div class="reveal">
             <h2>Conferences &amp; Seminars</h2>
-            <p class="section-subtitle">Presentations and academic visits.</p>
+            <p class="section-subtitle">Presentations, seminars and summer schools.</p>
         </div>
         <div class="conf-list reveal">
 
@@ -440,9 +488,9 @@
             <div class="conf-item">
                 <div class="conf-date">Sep 2026</div>
                 <div class="conf-body">
-                    <h3>XIX ESPAnet Italia Conference <span class="conf-tag">Upcoming</span></h3>
+                    <h3>XIX ESPAnet Italia Conference</h3>
                     <p class="conf-place">Rome, Italy &middot; 9–11 September</p>
-                    <p class="conf-paper">"An Open Wound: Measuring Scarring Effects in Italy"</p>
+                    <p class="conf-paper">Paper: "An Open Wound: Measuring Scarring Effects in Italy"</p>
                 </div>
             </div>
 
@@ -484,6 +532,35 @@
 
         </div>
         <p class="conf-note reveal">"Male Mortality and Female Poverty" has also been presented by a co-author.</p>
+
+        <h3 class="reveal" style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; margin: 3.5rem 0 1.2rem;">Summer Schools</h3>
+        <div class="conf-list reveal">
+
+            <div class="conf-item">
+                <div class="conf-date">Jun 2026</div>
+                <div class="conf-body">
+                    <h3>Inequalities and Opportunities Summer School</h3>
+                    <p class="conf-place">Bari, Italy &middot; 23–25 June</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">Jun 2025</div>
+                <div class="conf-body">
+                    <h3>Inequality and Education: Measurement, Evidence and Policy</h3>
+                    <p class="conf-place">University of Modena and Reggio Emilia, Modena, Italy &middot; 5–6 June</p>
+                </div>
+            </div>
+
+            <div class="conf-item">
+                <div class="conf-date">Jul 2023</div>
+                <div class="conf-body">
+                    <h3>Summer School on Experimetrics and Behavioral Economics</h3>
+                    <p class="conf-place">Sapienza University of Rome, Soleto, Italy &middot; 17–23 July</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 
@@ -517,7 +594,7 @@
     <div class="project-num">02</div>
     <h3>Teaching Assistant — Politica Economica</h3>
     <p>Teaching assistant for the course held by <strong>Prof. Massimiliano Tancioni</strong> at Sapienza University of Rome.</p>
-    
+
     <p style="margin-top: 1rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Esercitazioni</p>
     <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
         <a href="esercitazione1.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 1 ↓</a>

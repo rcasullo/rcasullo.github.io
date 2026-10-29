@@ -325,6 +325,18 @@
         .abstract summary::after { content: '+'; font-size: 1rem; line-height: 1; transition: transform 0.3s; }
         .abstract[open] summary::after { transform: rotate(45deg); }
         .abstract p { margin-top: 0.8rem; font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
+
+        /* --- LOCKED CHIPS --- */
+        .chip-locked {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            font-size: 0.78rem; font-weight: 500; color: var(--accent);
+            padding: 0.35rem 0.8rem; background: var(--accent-soft);
+            border-radius: 100px; cursor: not-allowed; user-select: none;
+        }
+        .chip-locked::after {
+            content: ''; width: 11px; height: 11px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c45d3e' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='11' width='16' height='10' rx='2'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E") center / contain no-repeat;
+        }
     </style>
 </head>
 <body>
@@ -579,14 +591,14 @@
                 <h3>Teaching Assistant — Economia Politica</h3>
                 <p>Teaching assistant for the course at Sapienza University of Rome.</p>
                 <div style="display: flex; gap: 0.5rem; margin-top: 1.2rem; flex-wrap: wrap;">
-                    <a href="ep_esercitazione0.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 0 ↓</a>
-                    <a href="ep_esercitazione1.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 1 ↓</a>
-                    <a href="ep_esercitazione2.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 2 ↓</a>
-                    <a href="ep_esercitazione3.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 3 ↓</a>
-                    <a href="ep_esercitazione4.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 4 ↓</a>
-                    <a href="ep_esercitazione5.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 5 ↓</a>
-                    <a href="ep_esercitazione6.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 6 ↓</a>
-                    <a href="ep_esercitazione7.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Ex. 7 ↓</a>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 0</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 1</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 2</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 3</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 4</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 5</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 6</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 7</span>
                 </div>
                 <div class="project-tech"><span>Sapienza</span><span>A.Y. 2024/25 - 2025/2026</span></div>
             </div>
@@ -597,11 +609,11 @@
 
     <p style="margin-top: 1rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Esercitazioni</p>
     <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
-    <span class="chip-locked" title="Available at the end of the course">Ex. 1</span>
-    <span class="chip-locked" title="Available at the end of the course">Ex. 2</span>
-    <span class="chip-locked" title="Available at the end of the course">Ex. 3</span>
-    <span class="chip-locked" title="Available at the end of the course">Ex. 4</span>
-    <span class="chip-locked" title="Available at the end of the course">Ex. 5</span>
+        <span class="chip-locked" title="Available at the end of the course">Ex. 1</span>
+        <span class="chip-locked" title="Available at the end of the course">Ex. 2</span>
+        <span class="chip-locked" title="Available at the end of the course">Ex. 3</span>
+        <span class="chip-locked" title="Available at the end of the course">Ex. 4</span>
+        <span class="chip-locked" title="Available at the end of the course">Ex. 5</span>
     </div>
 
     <p style="margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Corso di recupero</p>
@@ -614,7 +626,7 @@
     </div>
     <p style="margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Simulazione esame</p>
     <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
-    <a href="esercitazione_nuova.pdf" download style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Parte Quantitativa ↓</a>
+        <span class="chip-locked" title="Available at the end of the course">Parte Quantitativa</span>
     </div>
     <div class="project-tech" style="margin-top: 1.2rem;"><span>Sapienza</span><span>A.Y. 2024/25</span></div>
 </div>

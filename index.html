@@ -326,6 +326,19 @@
         .abstract[open] summary::after { transform: rotate(45deg); }
         .abstract p { margin-top: 0.8rem; font-size: 0.85rem; line-height: 1.75; color: var(--muted); }
 
+        /* --- ACTIVE CHIPS --- */
+        .chip {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            font-size: 0.78rem; font-weight: 500; color: var(--accent);
+            padding: 0.35rem 0.8rem; background: var(--accent-soft);
+            border-radius: 100px; text-decoration: none;
+            transition: all 0.3s;
+        }
+        .chip:hover {
+            background: var(--accent); color: white;
+            transform: translateY(-1px);
+        }
+
         /* --- LOCKED CHIPS --- */
         .chip-locked {
             display: inline-flex; align-items: center; gap: 0.35rem;
@@ -586,6 +599,7 @@
             <p class="section-subtitle">Courses and materials.</p>
         </div>
         <div class="project-grid stagger">
+
             <div class="project-card">
                 <div class="project-num">01</div>
                 <h3>Teaching Assistant — Economia Politica</h3>
@@ -602,34 +616,38 @@
                 </div>
                 <div class="project-tech"><span>Sapienza</span><span>A.Y. 2024/25 - 2025/2026</span></div>
             </div>
-           <div class="project-card">
-    <div class="project-num">02</div>
-    <h3>Teaching Assistant — Politica Economica</h3>
-    <p>Teaching assistant for the course held by <strong>Prof. Massimiliano Tancioni</strong> at Sapienza University of Rome.</p>
-    
-    <p style="margin-top: 1rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Esercitazioni</p>
-    <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
-        <a class="chip" href="Esercitazione_29-10.pdf" target="_blank" rel="noopener" title="Esercitazione del 29/10">Ex. 1</a>
-        <a class="chip" href="Esercitazione_02-11.pdf" target="_blank" rel="noopener" title="Esercitazione del 02/11">Ex. 2</a>
-        <a class="chip" href="Esercitazione_05-11.pdf" target="_blank" rel="noopener" title="Esercitazione del 05/11">Ex. 3</a>
-        <span class="chip-locked" title="Available at the end of the course">Ex. 4</span>
-        <span class="chip-locked" title="Available at the end of the course">Ex. 5</span>
-    </div>
 
-    <p style="margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Corso di recupero</p>
-    <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
-        <a href="https://rcasullo.github.io/Politica-Economica/" target="_blank" style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Site →</a>
-        <a href="https://rcasullo.github.io/Politica-Economica/lezione1_note.html" target="_blank" style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Lesson 1</a>
-        <a href="https://rcasullo.github.io/Politica-Economica/lezione2_note.html" target="_blank" style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Lesson 2</a>
-        <a href="https://rcasullo.github.io/Politica-Economica/lezione3_note.html" target="_blank" style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Lesson 3</a>
-        <a href="https://rcasullo.github.io/Politica-Economica/lezione4_note.html" target="_blank" style="font-size: 0.78rem; text-decoration: none; color: var(--accent); padding: 0.35rem 0.8rem; background: var(--accent-soft); border-radius: 100px; font-weight: 500; transition: all 0.3s;">Lesson 4</a>
-    </div>
-    <p style="margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Simulazione esame</p>
-    <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
-        <span class="chip-locked" title="Available at the end of the course">Parte Quantitativa</span>
-    </div>
-    <div class="project-tech" style="margin-top: 1.2rem;"><span>Sapienza</span><span>A.Y. 2024/25</span></div>
-</div>
+            <div class="project-card">
+                <div class="project-num">02</div>
+                <h3>Teaching Assistant — Politica Economica</h3>
+                <p>Teaching assistant for the course held by <strong>Prof. Massimiliano Tancioni</strong> at Sapienza University of Rome.</p>
+
+                <p style="margin-top: 1rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Esercitazioni</p>
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
+                    <a class="chip" href="Esercitazione_29-10.pdf" target="_blank" rel="noopener" title="Esercitazione del 29/10">Ex. 1</a>
+                    <a class="chip" href="Esercitazione_02-11.pdf" target="_blank" rel="noopener" title="Esercitazione del 02/11">Ex. 2</a>
+                    <a class="chip" href="Esercitazione_05-11.pdf" target="_blank" rel="noopener" title="Esercitazione del 05/11">Ex. 3</a>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 4</span>
+                    <span class="chip-locked" title="Available at the end of the course">Ex. 5</span>
+                </div>
+
+                <p style="margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Corso di recupero</p>
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
+                    <a class="chip" href="https://rcasullo.github.io/Politica-Economica/" target="_blank" rel="noopener">Site →</a>
+                    <a class="chip" href="https://rcasullo.github.io/Politica-Economica/lezione1_note.html" target="_blank" rel="noopener">Lesson 1</a>
+                    <a class="chip" href="https://rcasullo.github.io/Politica-Economica/lezione2_note.html" target="_blank" rel="noopener">Lesson 2</a>
+                    <a class="chip" href="https://rcasullo.github.io/Politica-Economica/lezione3_note.html" target="_blank" rel="noopener">Lesson 3</a>
+                    <a class="chip" href="https://rcasullo.github.io/Politica-Economica/lezione4_note.html" target="_blank" rel="noopener">Lesson 4</a>
+                </div>
+
+                <p style="margin-top: 1.2rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Simulazione esame</p>
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap;">
+                    <span class="chip-locked" title="Available at the end of the course">Parte Quantitativa</span>
+                </div>
+
+                <div class="project-tech" style="margin-top: 1.2rem;"><span>Sapienza</span><span>A.Y. 2024/25</span></div>
+            </div>
+
         </div>
     </div>
 </section>
